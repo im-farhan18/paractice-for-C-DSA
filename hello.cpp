@@ -5,14 +5,16 @@ using namespace std;
 
 void maxSubarraySum1(int *arr, int n){
 int MaxSum = INT_MIN;
-  for ( int start = 0 ; start < n ; start++){
-    int CurrSum = 0 ;
-    for(int end = start;end<n;end++){
-      CurrSum += arr[end];
-      MaxSum = max(MaxSum,CurrSum);
-    }
+int CurrSum = 0;
+
+for(int i = 0; i<n;i++){
+  CurrSum += arr[i];
+  MaxSum = max(MaxSum,CurrSum);
+  if(CurrSum < 0){
+    CurrSum = 0;
   }
-  cout<<"maximum subarray sum = "<<MaxSum<<endl;
+}
+cout<<"maximum subarray sum = "<<CurrSum<<endl;
 }
 
 
