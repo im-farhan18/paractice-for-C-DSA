@@ -1,25 +1,26 @@
 #include <iostream>
+#include <climits>   
+
 using namespace std;
 
-void printSubarrays(int *arr, int n) {
-  for (int start = 0; start < n; start++) {
-    for (int end = start; end < n; end++) {
-      // cout << "(" << start << "," << end << ") ";
-      for (int i = start; i <= end; i++) {
-        cout << arr[i];
-      }
-      cout << ",";
+void maxSubarraySum1(int *arr, int n){
+int MaxSum = INT_MIN;
+  for ( int start = 0 ; start < n ; start++){
+    int CurrSum = 0 ;
+    for(int end = start;end<n;end++){
+      CurrSum += arr[end];
+      MaxSum = max(MaxSum,CurrSum);
     }
-    cout << endl;
   }
+  cout<<"maximum subarray sum = "<<MaxSum<<endl;
 }
 
-int main() {
 
-  int arr[] = {1, 2, 3, 4, 5};
+int main()
+{
+  int arr[] = {2, -3, 6, -5, 4, 2};
   int n = sizeof(arr) / sizeof(arr[0]);
 
-  printSubarrays(arr, n);
-
+  maxSubarraySum1(arr, n);
   return 0;
 }
