@@ -1,16 +1,29 @@
 #include <iostream>
-#include <climits>   
+#include <climits>
 using namespace std;
 
-void buysell(int *arr ,int n){
-  int bestbuys = [100000] ;
-  bestbuys[0]
-}
+void SubArray(int *arr, int n)
+{
 
+  for (int start = 0; start < n; start++)
+  {
+    for (int end = start; end < n; end++)
+    {
+      // cout << "(" << start << "," << end << ") ";
+      for (int i = start; i <= end; i++)
+      {
+        cout << arr[i];
+      }
+      cout << ", ";
+    }
+    cout << endl;
+  }
+}
 
 int main()
 {
-  int arr[] = {7,1,5,3,6,4};
+
+  int arr[] = {2,-3,6,-5,4,2};
   int n = sizeof(arr) / sizeof(arr[0]);
   return 0;
 }
