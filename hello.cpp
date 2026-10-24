@@ -1,25 +1,25 @@
 #include <iostream>
 using namespace std;
 
-void printArr(int *arr, int n)
+void printarr(int *arr, int n)
 {
-  for (int i = 0; i < n; i++) {
+  for (int i = 0; i <= n; i++)
+  {
     cout << arr[i] << ",";
   }
-  cout << endl;
+  cout<<endl;
 }
-
 void ReverseArr(int *arr, int n)
 {
-  int *copyArr = new int[n];
-  for (int i = 0; i < n; i++) {
-    copyArr[i] = arr[n - i - 1];
+  int start = 0, end = n - 1;
+  while (start <= end)
+  {
+    int temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = arr[temp];
+    start++;
+    end--;
   }
-
-  for (int i = 0; i < n; i++) {
-    arr[i] = copyArr[i];
-  }
-  delete[] copyArr;
 }
 
 int main()
@@ -27,6 +27,6 @@ int main()
   int arr[5] = {1, 3, 9, 12, 15};
   int n = sizeof(arr) / sizeof(arr[0]);
   ReverseArr(arr, n);
-  printArr(arr, n);
+  printarr(arr, n);
   return 0;
 }
