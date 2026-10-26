@@ -1,33 +1,29 @@
 #include <iostream>
 #include <climits>
+#include <string>
 using namespace std;
 
-void SubArrayMax(int arr[], int n)
+class car{
+  string name;
+  string color;
 
-{
-  int MaxSum = INT_MIN;
-  for (int start = 0; start < n; start++)
-  {
-    for (int end = start; end < n; end++)
-    {
-      int CurSum = 0;
-      for (int i = start; i <= end; i++)
-      {
-        CurSum += arr[i];
-      }
-      cout << CurSum << ",";
-      MaxSum = max(MaxSum, CurSum);
-    }
-    cout << endl;
+  public:
+  car(){
+    cout<<"cunstructer is called.object being created..\n";
   }
-  cout << "MaxSum = " << MaxSum << endl;
-}
+  void start () {
+    cout << " car has started..\n";
+  }
+
+  void stop(){
+    cout<<"car has stopped..\n";
+  }
+};
 
 int main()
 {
-  int arr[] = {2, -3, 6, -5, 4, 2};
-  int n = sizeof(arr) / sizeof(arr[0]);
-  SubArrayMax(arr, n);
+
+  car c1;
 
   return 0;
 }
