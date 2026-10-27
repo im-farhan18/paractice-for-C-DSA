@@ -3,27 +3,35 @@
 #include <string>
 using namespace std;
 
-class car{
-  string name;
-  string color;
-
-  public:
-  car(){
-    cout<<"cunstructer is called.object being created..\n";
+void printarr(int arr[], int n)
+{
+  for (int i = 0; i < n; i++)
+  {
+    cout << arr[i] << ",";
   }
-  void start () {
-    cout << " car has started..\n";
+}
+void BubbleSort(int arr[], int n)
+{
+  for (int i = 0; i < n - 1; i++)
+  {
+    for (int j = 0; j < n - i - 1; j++)
+    {
+      if (arr[j] > arr[j + 1])
+      {
+        swap(arr[j], arr[j + 1]);
+      }
+    }
   }
-
-  void stop(){
-    cout<<"car has stopped..\n";
-  }
-};
+  printarr(arr, n);
+}
 
 int main()
 {
 
-  car c1;
+  int arr[5] = {5, 4, 1, 3, 2};
+  int n = sizeof(arr) / sizeof(arr[0]);
+
+  BubbleSort(arr, n);
 
   return 0;
 }
