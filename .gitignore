@@ -1,0 +1,9 @@
+# Compiled C++ programs
+a.out
+*.out
+*.exe
+hello
+trapping-rainwater
+
+# Local build output
+build/
