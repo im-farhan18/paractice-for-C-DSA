@@ -1,39 +1,30 @@
 #include <iostream>
-#include <climits>
-#include <string>
 using namespace std;
 
-void insertion()
+int LinearSearch(int *arr, int n, int key)
 {
-}
-
-void SelectionSort(int arr[], int n)
-{
-  for (int i = 0; i < n - 1; i++)
-  {
-    int minIDX = i;
-    for (int j = i + 1; j < n; j++)
-    {
-      if (arr[j] < arr[minIDX])
-      {
-        minIDX = j;
-      }
-    }
-    swap(arr[i], arr[minIDX]);
-  }
   for (int i = 0; i < n; i++)
   {
-    cout << arr[i];
+    if (arr[i] == key)
+    {
+      return i;
+    }
   }
-  cout<<endl;
+
+  return -1;
 }
+
 int main()
 {
 
-  int arr[5] = {5, 4, 1, 3, 2};
+  int arr[] = { 23,4, 5,3, 3, 23, 44,55,34,3,21,3,556,43,24,};
   int n = sizeof(arr) / sizeof(arr[0]);
 
-  SelectionSort(arr, n);
+  int key;
+  cout << "enter the key to find :";
+  cin >> key;
+
+  cout << LinearSearch(arr, n, key) << endl;
 
   return 0;
 }
