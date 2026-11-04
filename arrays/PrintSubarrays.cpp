@@ -9,11 +9,11 @@ void PrintSubarray(int *arr, int n)
         {
             for (int i = start; i <= end; i++)
             {
-                cout << arr[i] << ",";
+                cout << arr[i];
             }
-               cout<<endl;
+            cout << ",";
         }
-  
+        cout << endl;
     }
 }
 int main()
