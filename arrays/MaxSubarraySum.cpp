@@ -36,7 +36,6 @@ void maxSubarraySum2(int *arr, int n)
             currSum += arr[end];
             MaxSum = max(MaxSum, currSum);
         }
-      
     }
     cout << "Maximum Subarray Sum = " << MaxSum << endl;
 }
@@ -46,7 +45,6 @@ int main()
     int n = 6;
     maxSubarraySum1(arr, n);
     maxSubarraySum2(arr, n);
-
 
     return 0;
 }
